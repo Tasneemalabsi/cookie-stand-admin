@@ -27,13 +27,10 @@ export default function Main(event) {
     return(
 <main>
         <CreateForm formHandler={formHandler}/>
-        
-        <div className='py-1'>
-        {stand.length?<p className='flex justify-center my-6'>Report Table Coming Soon...</p>:console.log('hello')}
+      
         <div className='flex justify-center'>
-        {stand.length? <ReportTable stands = {store}/>: <h2>No Cookie Stands Available</h2>
+        {stand.length? <ReportTable stands = {store} />: <h2>No Cookie Stands Available</h2>
                 }
-        </div>
         </div>
       </main>
     )

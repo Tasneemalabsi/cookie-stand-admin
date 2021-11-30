@@ -1,11 +1,11 @@
 import { hours } from './assets/data'
 export default function ReportTable(props){
 let sum = 0;
-let total = 0
 let lastTotal = 0
+let hourly_sales = [48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36]
 
     return(
-        <table className='border border-style: solid border-black text-center border-collapse w-11/12'>
+        <table className='border border-style: solid border-black text-center border-collapse w-10/12'>
             <thead className='bg-green-500'>
                 <th>Location</th>
             {hours.map(hour => {
@@ -42,24 +42,12 @@ let lastTotal = 0
             </tbody>
             <tfoot className='bg-green-500 font-bold'>
                 <td className='border border-style: solid border-black'>Totals</td>
-                {/* {hours.map((hour,key)=>{
-                    total = 0 
-                 return(   
-                props.stands.map((stand)=>{
-                        console.log(key);
-                    total = total+stand.hourly_sales[key]
-                    return (
-                        <>
-                        <td>{total}</td>
-                        </>
-                    )
-                    })
-
-                )})} */}
-                {hours.map((sale,key)=>{
+                {hourly_sales.map((sale,key)=>{
+                    console.log(sale);
                         return(
                         
-                        <td className='border border-style: solid border-black' key={`${key}`}>{props.stands.hourly_sales}</td>
+                        <td className='border border-style: solid border-black' key={`${key}`}>
+                        {sale}</td>
                         )
                     })}
                 {props.stands.map(item=>{

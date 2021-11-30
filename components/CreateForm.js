@@ -6,16 +6,16 @@ export default function CreateForm(props){
         <label className='px-2'>Location</label>
           <input type="text" name='location' className='w-full'/>
           </div>
-          <div className='flex py-2 px-3'>
-          <div className='py-2'>
+          <div className='flex py-2 px-3 '>
+          <div className='py-2 bg-green-200 mx-2 rounded text-center'>
           <label>Minimum Customers per Hour</label>
           <input type="number" name='minCustomers' />
           </div>
-          <div className='py-2'>
+          <div className='py-2 bg-green-200 mx-2 rounded text-center'>
           <label>Maximum Customers per Hour</label>
           <input type="number" name='maxCustomers' />
           </div>
-          <div className='py-2'>
+          <div className='py-2 bg-green-200 mx-2 rounded text-center'>
           <label>Average Cookies per Sale</label>
           <input type="number" name='avgCookies' />
           </div>
