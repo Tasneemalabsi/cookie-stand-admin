@@ -26,35 +26,37 @@ export default function Home(event) {
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"/>
       </Head>
       
-      <header className='bg-green-400 flex justify-start p-4 text-2xl mb-2'>
+      <header className='bg-green-400 flex justify-start p-4 text-4xl mb-2 font-bold'>
         <h1>
         Cookie Stand Admin
         </h1>
       </header>
       <main>
         
-        <form action="" onSubmit={formHandler} className='flex flex-col justify-center bg-green-300 w-3/4 mx-auto p-2'>
-        <h2 htmlFor="" className='mx-auto flex justify-center'>Create Cookie Stand</h2>
-          <div className='flex-auto flex justify-center w-1/2'>
-        <label>Location</label>
-          <input type="text" name='location' />
+        <form action="" onSubmit={formHandler} className='flex flex-col justify-center bg-green-300 w-10/12 mx-auto p-2 my-6 rounded-xl'>
+        <h2 htmlFor="" className='mx-auto flex justify-center my-2 text-2xl 	--tw-text-opacity: 1;'>Create Cookie Stand</h2>
+          <div className='flex-auto flex justify-center py-6'>
+        <label className='px-2'>Location</label>
+          <input type="text" name='location' className='w-full'/>
           </div>
-          <div className='flex'>
-          <div className=''>
+          <div className='flex py-2 px-3'>
+          <div className='py-2'>
           <label>Minimum Customers per Hour</label>
           <input type="number" name='minCustomers' />
           </div>
-          <div>
+          <div className='py-2'>
           <label>Maximum Customers per Hour</label>
           <input type="number" name='maxCustomers' />
           </div>
-          <div>
+          <div className='py-2'>
           <label>Average Cookies per Sale</label>
           <input type="number" name='avgCookies' />
           </div>
-          <input type="submit" value ="Create" className = 'px-2' />
+          <input type="submit" value ="Create" className = 'px-20 h-14 text-xl bg-green-500' />
           </div>
         </form>
+        <div className='py-1'>
+        {stand.length?<p className='flex justify-center my-6'>Report Table Coming Soon...</p>:console.log('hello')}
         <div className='flex justify-center'>
         {stand.map(item => {
                         return (
@@ -63,9 +65,10 @@ export default function Home(event) {
                     })
                 }
         </div>
+        </div>
       </main>
-      <footer className = 'bg-green-400 bottom-0 fixed w-full'>
-        &copy; 2021
+      <footer className = 'bg-green-400 bottom-0 fixed w-full p-4 my-6'>
+        &copy;2021
       </footer>
     </div>
   )
