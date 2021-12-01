@@ -37,5 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Pull Request Link for Lab38: [PR-link](https://github.com/Tasneemalabsi/cookie-stand-admin/pull/2)
 
-## Pull Request Link for Lab39: [Pr-Link]()
+## Pull Request Link for Lab39: [Pr-Link](https://github.com/Tasneemalabsi/cookie-stand-admin/pull/3)
+
+## API Link: [API](https://cookie-stand-api11.herokuapp.com)
 
