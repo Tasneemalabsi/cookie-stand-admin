@@ -1,4 +1,4 @@
-export default function CreateForm(props){
+export default function CreateForm(props, { onCreate }){
     return (
 <form action="" onSubmit={props.formHandler} className='flex flex-col justify-center bg-green-300 w-10/12 mx-auto p-2 my-6 rounded-xl'>
         <h2 htmlFor="" className='mx-auto flex justify-center my-2 text-2xl 	--tw-text-opacity: 1;'>Create Cookie Stand</h2>

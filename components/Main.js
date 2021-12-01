@@ -2,7 +2,7 @@ import CreateForm from './CreateForm'
 import { useState } from 'react'
 import ReportTable from './ReportTable';
 
-export default function Main(event) {
+export default function Main() {
     const [stand, setStand] = useState([]);
     const [store, setStore] = useState([])
 
