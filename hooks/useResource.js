@@ -1,7 +1,7 @@
 import axios from 'axios'
 import useSWR from 'swr'
 
-export const apiUrl = 'https://cookie-stand-api11.herokuapp.com/api/v1/cookie_stands/'
+export const apiUrl = process.env.NEXT_PUBLIC_RESOURCE_URL;
 import { useAuth } from '../contexts/auth'
 
 export default function useResource() {
@@ -65,6 +65,7 @@ export default function useResource() {
 
     function handleError(error) {
         console.error(error);
+        console.log('error',error);
         // currently just log out on error
         // but a common error will be short lived token expiring
         // STRETCH: refresh the access token when it has expired

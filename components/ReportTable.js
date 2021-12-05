@@ -1,18 +1,15 @@
 import { hours } from './assets/data'
 import useResource from '../hooks/useResource'
-import { ReactElement } from 'react'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useAuth } from '../contexts/auth'
+
 
 
 export default function ReportTable(props){
-const {deleteResource} = useResource()
-let sum = 0;
+    const {loading} = useResource();
+    let sum = 0;
 let lastTotal = 0
 let hourly_sales = [48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36]
-
-
-
+if (loading) return <p>Loading...</p>
     return(
         <table className='border border-style: solid border-black text-center border-collapse w-10/12'>
             <thead className='bg-green-500'>
@@ -30,18 +27,20 @@ let hourly_sales = [48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36]
             <tbody>
                 
                     
-                {props.stands.map((stand,key)=>{
+                {props.stands.map((stand)=>{
+                    if (props.loading) return <h2>Loading...</h2>
                     sum = 0
-                    console.log(stand);
+                    console.log(stand.hourly_sales);
                     return(
-                    <tr key={`${key}`} className='bg-green-300'>
+                    <tr key={`${stand.id}`} className='bg-green-300'>
                     <td className='border border-style: solid border-black'>{stand.location}
-                    <button onClick={()=>deleteResource(stand)}>
+                    <button onClick={()=>props.onDelete(stand.id)}>
                         X
                     </button>
                     </td>
-                    {stand.hourly_sales.map((sale,key)=>{
+                    {(stand.hourly_sales).map((sale,key)=>{
                         {sum = sum + sale}
+                        console.log(sum);
                         return(
                         
                         <td key={`${key}`} className='border border-style: solid border-black'>{sale}</td>
