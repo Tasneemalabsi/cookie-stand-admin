@@ -16,13 +16,14 @@ export default function Main() {
     event.preventDefault()
       const form = {
           location: event.target.location.value,
-          minCustomers: event.target.minCustomers.value,
-          maxCustomers: event.target.maxCustomers.value,
-          avgCookies: event.target.avgCookies.value,
+          description:'anything',
+          minimum_customers_per_hour: event.target.minCustomers.value,
+          maximum_customers_per_hour: event.target.maxCustomers.value,
+          average_cookies_per_sale: event.target.avgCookies.value,
           hourly_sales:[48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36],
-          owner: user.username
-
-      } 
+          owner: user.id
+        } 
+      console.log(form);
       createResource(form);
       event.target.reset(); 
       const standLocation={
@@ -40,7 +41,7 @@ return(
         <CreateForm formHandler={formHandler} onCreate={createResource}/>
       
         <div className='flex justify-center'>
-        {resources.length?<ReportTable stands = {resources} loading={loading} onDelete={deleteResource} />:<h2>No Cookie Stand Available</h2>}
+        {resources?.length?<ReportTable stands = {resources} loading={loading} onDelete={deleteResource} />:<h2>No Cookie Stand Available</h2>}
               
         </div>
       </main>
