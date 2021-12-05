@@ -1,6 +1,6 @@
 import { hours } from './assets/data'
 import useResource from '../hooks/useResource'
-import { useAuth } from '../contexts/auth'
+import Image from 'next/image'
 
 
 
@@ -33,8 +33,8 @@ let hourly_sales = [48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36]
                     return(
                     <tr key={`${stand.id}`} className='bg-green-300'>
                     <td className='border border-style: solid border-black'>{stand.location}
-                    <button onClick={()=>props.onDelete(stand.id)}>
-                        X
+                    <button onClick={()=>props.onDelete(stand.id)} className='px-2'>
+                     Delete
                     </button>
                     </td>
                     {(stand.hourly_sales).map((sale,key)=>{
