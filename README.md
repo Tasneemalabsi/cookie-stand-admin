@@ -43,3 +43,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Deployed version: [Link](https://cookie-stand-admin-seven-fawn.vercel.app/)
 
+## Environment Variables: 
+    1. NEXT_PUBLIC_API_URL : https://cookie-stand-api11.herokuapp.com
+    2. NEXT_PUBLIC_RESOURCE_URL : https://cookie-stand-api11.herokuapp.com/api/v1/cookie_stands/
+
