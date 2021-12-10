@@ -1,9 +1,14 @@
 import { hours } from './assets/data'
+import useResource from '../hooks/useResource'
+import Image from 'next/image'
+
+
+
 export default function ReportTable(props){
-let sum = 0;
+    const {loading} = useResource();
+    let sum = 0;
 let lastTotal = 0
 let hourly_sales = [48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36]
-
     return(
         <table className='border border-style: solid border-black text-center border-collapse w-10/12'>
             <thead className='bg-green-500'>
@@ -21,13 +26,20 @@ let hourly_sales = [48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36]
             <tbody>
                 
                     
-                {props.stands.map((stand,key)=>{
+                {props.stands.map((stand)=>{
+                    if (props.loading) return <h2>Loading...</h2>
                     sum = 0
+                    console.log(stand.hourly_sales);
                     return(
-                    <tr key={`${key}`} className='bg-green-300'>
-                    <td className='border border-style: solid border-black'>{stand.location}</td>
-                    {stand.hourly_sales.map((sale,key)=>{
+                    <tr key={`${stand.id}`} className='bg-green-300'>
+                    <td className='border border-style: solid border-black'>{stand.location}
+                    <button onClick={()=>props.onDelete(stand.id)} className='px-2'>
+                     Delete
+                    </button>
+                    </td>
+                    {(stand.hourly_sales).map((sale,key)=>{
                         {sum = sum + sale}
+                        console.log(sum);
                         return(
                         
                         <td key={`${key}`} className='border border-style: solid border-black'>{sale}</td>
